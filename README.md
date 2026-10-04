@@ -1,55 +1,59 @@
-# 📡 Projet de Géolocalisation avec Réseaux de Neurones
+# 📡 Indoor Localization Using Neural Networks
 
-Ce projet utilise les **puissances de signal RSSI** issues de 4 passerelles pour estimer la **position (x, y)** d’un objet ou d’un utilisateur à l’aide de **réseaux de neurones** avec TensorFlow/Keras.
-
----
-
-## 🧠 Objectif
-
-Prédire la position réelle à partir des signaux RSSI mesurés, en utilisant un modèle de deep learning entraîné sur des données simulées ou réelles.
+This project uses **RSSI signal strength measurements** from 4 gateways to estimate the **(x, y) position** of an object or user using **neural networks** implemented with TensorFlow/Keras.
 
 ---
 
-## 📁 Données utilisées
+## 🧠 Objective
 
-Les données proviennent de **4 fichiers CSV** :
+Predict the actual position from measured RSSI signals using a deep learning model trained on simulated or real data.
+
+---
+
+## 📁 Data
+
+The data comes from **4 CSV files**:
 - `RSSI_0.csv`
 - `RSSI_1.csv`
 - `RSSI_2.csv`
 - `RSSI_3.csv`
 
-Chaque fichier représente les valeurs de puissance de signal (RSSI) reçues depuis une passerelle.
+Each file contains signal strength values (RSSI) received from one gateway.
 
 ---
 
-## 🔧 Étapes du pipeline
+## 🔧 Pipeline
 
-1. **Chargement & Visualisation** des données avec heatmaps.
-2. **Nettoyage** : suppression de la dernière ligne et colonne + remplissage des `NaN` par la moyenne.
-3. **Création de dataset** (RSSI comme input, position (x, y) comme output).
-4. **Modélisation avec Keras** :
-   - Modèle dense simple (64-64-2)
-   - Modèle amélioré avec `Dropout`, `ReduceLROnPlateau`, et plus de couches.
-5. **Évaluation** :
+1. **Data Loading & Visualization** using heatmaps.
+2. **Data Cleaning**: removal of the last row and column, with missing `NaN` values filled using the mean.
+3. **Dataset Construction**: RSSI values as input features and position `(x, y)` as target output.
+4. **Modeling with Keras**:
+   - Simple dense neural network architecture `(64-64-2)`
+   - Improved model using `Dropout`, `ReduceLROnPlateau`, and additional layers.
+5. **Evaluation**:
    - `MSE`, `MAE`, `R²`
-   - Affichage des courbes de pertes
-   - Histogramme des erreurs de localisation
+   - Training loss curves
+   - Localization error histogram
 
 ---
 
-## 📦 Librairies utilisées
+## 📦 Libraries
 
 - `numpy`
 - `pandas`
-- `matplotlib`, `seaborn`
-- `tensorflow`, `keras`
+- `matplotlib`
+- `seaborn`
+- `tensorflow`
+- `keras`
 - `scikit-learn`
 
 ---
 
-## ⚙️ Lancer le projet
+## ⚙️ Run the Project
 
-### 1. Cloner le dépôt
+### 1. Clone the repository
+
 ```bash
-git clone https://github.com/bachir6c/Geolocalisation.git
-cd Geolocalisation
+git clone https://github.com/bachir6c/rssi-indoor-localization.git
+cd rssi-indoor-localization
+```
